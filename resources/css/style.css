@@ -94,9 +94,15 @@ html {
   font-weight: 500;
   color: #666666;
 }
-/* These Replace .titleBarRight
+
+.mottoButtonImg:hover {
+  background-color: lightBlue;
+  border: dotted 2px blue;
+}
+.mottoButtonImg {
+  /* These are hidden and replace
+   .titleBarRight
    for a small phone screen */
-#idCampus, #idOnline, #idSignIn {
   vertical-align: middle;
   display: none;
   height: 80%;
@@ -115,8 +121,7 @@ html {
     /* replace titleBarRight w/idXXX images */
     display: none;  /* hide */
   }
-  #idCampus, #idOnline, #idSignIn,
-  .titleDarker, .titleLighter {
+  .mottoButtonImg, .titleDarker, .titleLighter {
     display: block; /* show */
     height: 80%;
   }
@@ -135,7 +140,7 @@ html {
        and remove COLMAR ACADEMY h1/h2 title */
     display: none;  /* hide */
   }
-  #idCampus, #idOnline, #idSignIn {
+  .mottoButtonImg {
     display: block; /* show */
     height: 80%;
   }
