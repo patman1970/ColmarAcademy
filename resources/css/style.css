@@ -20,6 +20,7 @@ html {
   position: fixed; /* stay on top */
   z-index: 2;
   top: 0; /* some browsers have space on top */
+  background-color: white;
 }
 .titleBarLeft {
   /* these are INSIDE #idTitleBar
@@ -30,9 +31,9 @@ html {
   vertical-align: middle;
   align-items: center;
   height: 100%;
+  margin-left: 1.0rem; /* 1.0 + 0.5 (Img) = 1.5rem */
   /* this border for debug only
   border: solid 1px red; */
-  margin-left: 1.0rem; /* 1.0 + 0.5 (Img) = 1.5rem */
 }
 .titleLogoImg {
   /* organize this image to be a certain
@@ -100,9 +101,8 @@ html {
   border: dotted 2px blue;
 }
 .mottoButtonImg {
-  /* These are hidden and replace
-   .titleBarRight
-   for a small phone screen */
+  /* These are hidden and replaces
+   .titleBarRight for a small phone screen */
   vertical-align: middle;
   display: none;
   height: 80%;
@@ -155,11 +155,54 @@ html {
 /**************************************/
 
 
+/* NOTE: .halfScreenXX is shared by sections:
+    idMottoSection and idFeaturesSection
+*/
+.halfScreenLeft {
+  width: 60%; /* only contains an image */
+  display: block;
+  /* this border for debug only:
+  border: solid 1px black;  */
+}
+.halfScreenLeft img {
+  width: 90%; /* take up most of the container */
+  height: auto;
+  margin: 1rem;
+}
+.halfScreenRight {
+  margin: 0 1rem;
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  text-align: center;
+  justify-content: center;
+  /* this border for debug only:
+  border: solid 1px black; */
+}
+.halfScreenSubtitle {
+  /* This put here to match image above */
+  margin: 1rem 1.5rem; /* top: 16px, r/l: 24ps */
+  color: #444444;
+}
+.halfScreenRight h1,h2,h3 {
+  text-transform: none;
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 0.5rem 0; /* top/bottom margin only */
+}
+.halfScreenRight h4 {
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  margin: 1rem auto;
+}
+
 /**************************************/
 /******* START "MOTTO" SECTION ********/
 /**************************************/
 /* idMottoSection   ORGANIZATION OF DIVS:
-    [--- .mottoLeft ----]   [-- .mottoRight --]
+    [.halfScreenLeft]   [.halfScreenRight]
     <img only> 60%       <h2></h2>, <p></p>
                          then .mottoButton
 */
@@ -171,40 +214,6 @@ html {
   flex-wrap: nowrap;
   background-color: #CCCCCC; /* lightGrey */
   color: #444444;
-}
-
-#idMottoSection .mottoLeft {
-  width: 60%; /* only contains an image */
-  display: block;
-  /* this border for debug only:
-  border: solid 1px black;  */
-}
-#idMottoSection .mottoLeft img {
-  width: 90%; /* take up most of the container */
-  height: auto;
-  margin: 1rem;
-}
-#idMottoSection .mottoRight {
-  margin: 0 1rem;
-  max-width: 20rem;
-  vertical-align: middle;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* this border for debug only
-  border: solid 1px black; */
-}
-#idMottoSection .mottoRight h1,h2,h3 {
-  text-transform: none;
-  font-weight: 800;
-  font-size: 2rem;
-  margin: 0.5rem 0; /* top/bottom margin only */
-}
-#idMottoSection .mottoRight p {
-  font-weight: 600;
-  line-height: 1.4;
-  font-size: 1.2rem;
 }
 #idMottoSection #mottoButton:hover {
   background-color: #666666;
@@ -234,16 +243,16 @@ html {
   #idMottoSection {
     background-color: #777777;
   }
-  #idMottoSection .mottoLeft {
-    display: none;
+  .halfScreenLeft {
+    display: none;  /* hide the left */
   }
-  #idMottoSection .mottoRight {
+  #idMottoSection .halfScreenRight {
     max-width: 100%; /* override lower 20rem */
     width: 100%;
     margin-top: 11.25rem;
     margin-right: 0;
-    margin-left: 0;
-    background-color: #DDDDDD;
+    margin-left: 0;  /* Needed to override 777777 */
+    background-color: #DDDDDD; 
     padding-bottom: 2rem;
   }
   #idMottoSection #mottoButton {
@@ -254,4 +263,91 @@ html {
 }
 /**************************************/
 /********* END "MOTTO" SECTION ********/
+/**************************************/
+
+
+/**************************************/
+/***** START INFORMATION SECTION ******/
+/**************************************/
+#idFeaturesSection {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background-color: white;
+  color: #444444;
+}
+#idFeaturesSection .halfScreenRight {
+  /* override upper section of min-width */
+  min-width: 26.5rem; /* 423 px */
+  vertical-align: top;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 0;
+}
+#idFeaturesSection #idFeatureFootnote {
+  /* make it stand out like a quote */
+  font-family: Calibri, Helvetica, serif;
+  font-size: smaller;
+}
+.infoBox:hover {
+  background-color: #eeeeee;
+}
+.infoBox {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  border-top: none;
+  border-left: solid 1px #eeeeee;
+  border-right: solid 1px #eeeeee;
+  border-bottom: solid 1px #eeeeee;
+}
+@media only screen and (max-width: 680px) {
+  /* FOR SMALLER SCREENS (TABLETS)  */
+  .infoBox:hover {
+    /* default background-color: #eeeeee; */
+    background-color: #cccccc; /* darker */
+  };
+  .halfScreenRight, .infoBox {
+    /* default is this at < 680px at the top :
+    background-color: #DDDDDD; */
+    background-color: #eeeeee; /* lighter */
+  };
+}
+.infoBox .infoBoxLeft {
+  width: 35%; /* take up 1/3rd of container */
+  margin: 1rem;
+  /* this border for debug only:
+  border: solid 1px black; */
+}
+.infoBox .infoBoxLeft img {
+  width: 100%; /* img is inside infoBoxLeft */
+  height: auto;
+}
+.infoBox .infoBoxRight {
+  margin: 0 1rem; /* no border top/bottom */
+  width: 65%;
+  text-align: left;
+  /* this border for debug only:
+  border: solid 1px red; */
+}
+.infoBox .infoBoxRight p {
+  font-size: 1rem;
+}
+.infoBox .infoReadMore:hover {
+  font-weight: bold;
+  color: lightGreen;
+}
+.infoBox .infoReadMore {
+  /* read more link (button) */
+  border: none;
+  color: #939afa; /* darker lightBlue */;
+  background-color: transparent;
+  text-align: center;
+  margin: 0.25rem 0 0.25rem;
+  padding: 0;
+  font-size: 1rem;
+}
+/**************************************/
+/****** END INFORMATION SECTION *******/
 /**************************************/
