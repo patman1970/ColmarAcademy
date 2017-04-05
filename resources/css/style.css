@@ -1,0 +1,117 @@
+html {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/**************************************/
+/**** SET UP TITLE-BAR SECTION ********/
+/**************************************/
+/* idTitleBar   ORGANIZATION OF DIVS:
+    [--- .titleBarLeft ----]   [-- .titleBarRight --]
+    [.titleLogoImg]          [nav:] On Campus | Online
+    [h1 .titleDarker]    //     for companies | Sign in
+    [h1 .titleLighter]  OR idCampus-idOnline-idSignIn
+*/
+#idTitleBar {
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  height: 4rem;
+  width: 100%;  /* take the whole screen */
+  position: fixed; /* stay on top */
+  z-index: 2;
+  top: 0; /* some browsers have space on top */
+}
+.titleBarLeft {
+  /* these are INSIDE #idTitleBar
+     and contain the titleLogoImg
+     and titleDarker/titleLigher */
+  display: inline-flex;
+  justify-content: flex-start;
+  vertical-align: middle;
+  align-items: center;
+  height: 100%;
+  /* this border for debug only
+  border: solid 1px red; */
+  margin-left: 1.0rem; /* 1.0 + 0.5 (Img) = 1.5rem */
+}
+.titleLogoImg {
+  /* organize this image to be a certain
+     heigh/width with 24px padding on left */
+  padding: 0 0.5rem;
+  height: 80%;
+  /* this border for debug only
+  border: solid 1px black; */
+}
+.titleDarker h1,h2,h3, .titleLighter h1,h2,h3 {
+  /* Size the Title: COLMAR ACADEMY - at the top */
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 1.5rem;
+}
+.titleDarker {
+  font-weight: 700;
+  color: #333333; /* darker grey */
+}
+.titleLighter {
+  font-weight: 400;
+  color: #666666; /* lighter grey */
+}
+/* end .titleBarLeft sub-items */
+
+.titleBarRight {
+  /* these are INSIDE #idTitleBar */
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  vertical-align: middle;
+  align-items: center;
+  height: 100%;
+  margin-right: 1.0rem; /* 0.5 + 1.0 rem = 1.5 */
+}
+.titleBarRight nav a {
+  padding: 0 0.5rem; /* 16px (8x2) between each */
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666666;
+}
+/* These Replace .titleBarRight
+   for a small phone screen */
+#idCampus, #idOnline, #idSignIn {
+  vertical-align: middle;
+  display: none;
+  height: 4rem;
+  width: auto;
+  /* this border for debug only */
+  border: solid 1px #c6c1c1;
+}
+
+@media only screen and (max-width: 450px) {
+  /* FOR TINY PHONE SCREENS,
+     REPLACE TOP WITH IMAGES */
+  .titleBarRight {
+    display: none;  /* hide */
+  }
+  #idCampus, #idOnline, #idSignIn {
+    display: block; /* show */
+  }
+}
+/**************************************/
+/**** END SET UP TITLE-BAR SECTION ****/
+/**************************************/
+
+h1 {
+  color: SeaGreen;
+}
+
+
+p,
+li {
+  font-size: 18px;
+}
+
+
+a {
+  text-decoration: none;
+}
