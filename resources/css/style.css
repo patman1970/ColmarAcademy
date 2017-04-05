@@ -68,8 +68,11 @@ html {
   height: 100%;
   margin-right: 1.0rem; /* 0.5 + 1.0 rem = 1.5 */
 }
-.titleBarRight nav a {
+.titleBarRight .titleLinkBox {
   padding: 0 0.5rem; /* 16px (8x2) between each */
+  height: 100%;
+}
+.titleBarRight nav a {
   vertical-align: middle;
   text-decoration: none;
   font-size: 1.1rem;
@@ -81,20 +84,50 @@ html {
 #idCampus, #idOnline, #idSignIn {
   vertical-align: middle;
   display: none;
-  height: 4rem;
+  height: 80%;
   width: auto;
-  /* this border for debug only */
-  border: solid 1px #c6c1c1;
+  /* these are shaped taller than logo! */
+  padding-top: 0.5rem;
+  /* this border for debug only
+  border: solid 1px #c6c1c1; */
+}
+
+@media only screen and (max-width: 650px) {
+  /* FOR SMALLER SCREENS (TABLETS),
+     REPLACE TOP WITH IMAGES, but keep
+     the COLMAR ACADEMY header title */
+  .titleBarRight {
+    /* replace titleBarRight w/idXXX images */
+    display: none;  /* hide */
+  }
+  #idCampus, #idOnline, #idSignIn,
+  .titleDarker, .titleLighter {
+    display: block; /* show
+    height: 100%;
+  }
+  #idSignIn {
+    /* This is used to replace the closing
+       titleBarRight margin for smaller screens */
+    margin-right: 1rem;
+  }
 }
 
 @media only screen and (max-width: 450px) {
   /* FOR TINY PHONE SCREENS,
      REPLACE TOP WITH IMAGES */
-  .titleBarRight {
+  .titleBarRight, .titleDarker, .titleLighter {
+    /* replace titleBarRight w/idXXX images
+       and remove COLMAR ACADEMY h1/h2 title */
     display: none;  /* hide */
   }
   #idCampus, #idOnline, #idSignIn {
-    display: block; /* show */
+    display: block; /* show
+    height: 100%;
+  }
+  #idSignIn {
+    /* This is used to replace the closing
+       titleBarRight margin for smaller screens */
+    margin-right: 1rem;
   }
 }
 /**************************************/
