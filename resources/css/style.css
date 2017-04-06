@@ -328,7 +328,8 @@ html {
     background-color: #DDDDDD; */
     background-color: #eeeeee; /* lighter */
   };
-}
+}  /* END (max-width: 720px) */
+
 .infoBox .infoBoxLeft {
   width: 35%; /* take up 1/3rd of container */
   margin: 1rem;
@@ -433,6 +434,7 @@ html {
 .learnBox {
   width: 30%;
   min-width: 14rem;
+  max-width: 20rem;
   min-height: 19rem;
   text-align: left;
   background-color: white;
@@ -460,6 +462,14 @@ html {
   width: 100%;
   height: auto;
 }
+
+@media only screen and (max-width: 720px) {
+  /* FOR SMALLER SCREENS (TABLETS)  */
+  .learnBox { /* this is in section below */
+    min-height: 15rem;
+  }
+}  /* END (max-width: 720px) */
+
 @media only screen and (max-width: 450px) {
   /* FOR TINY PHONE SCREENS,
      REMOVE IMAGES IN LEARN SECTION: */
