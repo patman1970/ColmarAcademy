@@ -166,6 +166,7 @@ html {
 .halfScreenLeft {
   width: 60%; /* only contains an image */
   display: block;
+  text-align: left;
   /* this border for debug only:
   border: solid 1px black;  */
 }
@@ -266,6 +267,7 @@ html {
     background-color: #777777;
   }
 }
+
 /**************************************/
 /********* END "MOTTO" SECTION ********/
 /**************************************/
@@ -375,28 +377,28 @@ html {
 @media only screen and (max-width: 450px) {
   /* FOR TINY PHONE SCREENS,
      MAKE ICONS WIDER IN INFO SECTION: */
- .infoBox {  /* default padding = 0.5rem */
-   padding-bottom: 1rem;
- }
- .infoBox .infoBoxLeft {
-   /* hide left since new image is hidden on
-      the .infoBoxRight pane */
-   display: none;
- }
- .infoBox .infoBoxRight {
-   /* no border top/bottom, but right is IN */
-   margin: 0 2rem 0 1rem;
-   width: 100%;
-   /* this border for debug only:
-   border: solid 1px red;  */
- }
- /* was: #imgInfoOrientation, #imgInfoOurCampus */
- .infoMobileImage {
-   /* this inherits width/height/margin from main */
-   display: block; /* show */
- }
+  .infoBox {  /* default padding = 0.5rem */
+    padding-bottom: 1rem;
+  }
+  .infoBox .infoBoxLeft {
+    /* hide left since new image is hidden on
+       the .infoBoxRight pane */
+    display: none;
+  }
+  .infoBox .infoBoxRight {
+    /* no border top/bottom, but right is IN */
+    margin: 0 2rem 0 1rem;
+    width: 100%;
+    /* this border for debug only:
+    border: solid 1px red;  */
+  }
+  /* was: #imgInfoOrientation, #imgInfoOurCampus */
+  .infoMobileImage {
+    /* this inherits width/height/margin from main */
+    display: block; /* show */
+  }
+} /* end (max-width: 450px) */
 
-}
 /**************************************/
 /****** END INFORMATION SECTION *******/
 /**************************************/
@@ -524,13 +526,77 @@ html {
   flex-wrap: nowrap;
 }
 #vidThesis {  /* video inside halfScreenLeft */
-  width: 90%;
+  width: 100%;
   height: auto;
 }
 #idThesisSection .infoBox {
   min-height: 10.5rem;
   width: auto;
 }
+
+@media only screen and (max-width: 720px) {
+  /* FOR SMALLER SCREENS (TABLETS) --
+    keep only the video on the left since
+    there is no space for the rest: */
+  #idThesisSection .halfScreenLeft {
+    /* This is in section below, hide
+       it and make way for video only */
+    display: block;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+  #idThesisSection .halfScreenRight,
+  #idThesisSection .halfScreenSubtitle {
+      display: none; /* hide all text */
+  }
+}  /* end (max-width: 720px) */
+
+@media only screen and (max-width: 450px) {
+  /* FOR TINY PHONE SCREENS,
+     REPLACE TOP WITH IMAGES */
+  #idThesisSectionTOP .titleCenter,
+  #idThesisSectionTOP .titleDarker {
+    display: block; /* override prev setting */
+  }
+}  /* end (max-width: 450px) */
+
 /**************************************/
 /********  END THESIS SECTION  ********/
+/**************************************/
+
+
+/**************************************/
+/******** START FOOTER SECTION ********/
+/**************************************/
+/* NOTE: On a small screen, the right will
+  disappear with Terms/Privacy from the
+  default settings set above for 450px
+*/
+#idFooterBar {
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  height: 4rem;
+  width: 90%;  /* take most of the screen */
+  text-align: left;
+  background-color: white;
+  vertical-align: top;
+  font-size: 0.7rem;
+  margin: 0.5rem 1.5rem;  /* 24px left/right */
+}
+#idFooterBar .titleBarRight {
+  margin-right: 1rem;
+}
+#idFooterBar ul li {
+  display: inline;  /* this should remove bullets */
+  padding: 0 0.5rem;
+}
+#idFooterBar ul a {
+  text-decoration: none;
+  color: #333333;
+}
+/**************************************/
+/********  END FOOTER SECTION  ********/
 /**************************************/

@@ -241,17 +241,24 @@
     </div><!-- end idLearningSection (Learning Something..) -->
 
 
-    <div class="titleDarker titleCenter">
-      <h2 class="titleDarker">Thesis exhibit</h2>
+    <div id="idThesisSectionTOP">
+      <div class="titleDarker titleCenter">
+        <h2 class="titleDarker">Thesis exhibits</h2>
+      </div>
     </div>
 
     <div id="idThesisSection">
 
       <div class="halfScreenLeft">
-        <video id="vidThesis"
+        <video id="vidThesis" type="video/mp4" controls
              src="./resources/videos/thesis.mp4"
-             alt="Click to View Our Thesis" />
-
+             alt="Click to View Our Thesis"
+             preload="auto" loop="true" autoplay="false">
+             Sorry, your browser doesn't support embedded videos,
+             but don't worry, you can <a href="videofile.webm"
+             target="_blank">download it</a>
+             and watch it with your favorite video player!
+        </video>
         <div class="halfScreenSubtitle">
           <h2>Reimagine urban</h2>
           <p>"Curabitur vitae libero in ipsum porttitor
@@ -273,7 +280,8 @@
           <div class="infoBoxRight">
             <h4>Fisma: Design</h4>
             <p>
-              Designer showcase of new prototyp
+              Designer showcase of new
+              prototype product.
             </p>
             <!-- button class="infoReadMore">Read more
             </button -->
@@ -297,6 +305,19 @@
 
       </div><!-- end halfScreenRight -->
     </div><!-- end idThesisSection -->
+
+
+    <div id="idFooterBar">
+      <div class="titleBarLeft">
+        &copy; Colmar Academy. All rights reserved.
+      </div><!-- end titleBarLeft -->
+      <div class="titleBarRight">
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div><!-- end titleBarRight -->
+    </div><!-- end idFooterBar section -->
 
   </body>
 </html>
