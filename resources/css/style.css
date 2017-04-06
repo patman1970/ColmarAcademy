@@ -22,6 +22,11 @@ html {
   top: 0; /* some browsers have space on top */
   background-color: white;
 }
+.titleCenter {
+  text-align: center;
+  margin: 2rem;
+  padding: 0;
+}
 .titleBarLeft {
   /* these are INSIDE #idTitleBar
      and contain the titleLogoImg
@@ -307,7 +312,6 @@ html {
   border-left: solid 1px #eeeeee;
   border-right: solid 1px #eeeeee;
   border-bottom: solid 1px #eeeeee;
-  padding-bottom: 1rem;
 }
 /* was: #imgInfoOrientation, #imgInfoOurCampus */
 .infoMobileImage {
@@ -323,6 +327,9 @@ html {
     /* default background-color: #eeeeee; */
     background-color: #cccccc; /* darker */
   };
+  .infoBox {  /* default padding = 0.5rem */
+    padding-bottom: 1rem;
+  }
   .halfScreenRight, .infoBox {
     /* default is this at < 720px at the top :
     background-color: #DDDDDD; */
@@ -501,4 +508,29 @@ html {
 }
 /**************************************/
 /******** END LEARNING SECTION ********/
+/**************************************/
+
+
+/**************************************/
+/******** START THESIS SECTION ********/
+/**************************************/
+#idThesisSection {
+  padding: 0 1rem; /* 16px on the side */
+  text-align: center;
+  color: #666666;
+  background-color: white;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+#vidThesis {  /* video inside halfScreenLeft */
+  width: 90%;
+  height: auto;
+}
+#idThesisSection .infoBox {
+  min-height: 10.5rem;
+  width: auto;
+}
+/**************************************/
+/********  END THESIS SECTION  ********/
 /**************************************/
