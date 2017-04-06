@@ -37,7 +37,7 @@ html {
 }
 .titleLogoImg {
   /* organize this image to be a certain
-     heigh/width with 24px padding on left */
+     heigh/width with padding on left */
   padding: 0 0.5rem;
   height: 80%;
   /* this border for debug only
@@ -113,7 +113,7 @@ html {
   border: solid 1px #c6c1c1; */
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 720px) {
   /* FOR SMALLER SCREENS (TABLETS),
      REPLACE TOP WITH IMAGES, but keep
      the COLMAR ACADEMY header title */
@@ -195,7 +195,7 @@ html {
   font-weight: 600;
   line-height: 1.4;
   font-size: 1.2rem;
-  margin: 1rem auto;
+  margin: 1rem;
 }
 
 /**************************************/
@@ -236,7 +236,7 @@ html {
   /* height: 1.5rem; */
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 720px) {
   /* FOR SMALLER SCREENS (TABLETS) --
     close the image on the left since
     there is no space or need for it: */
@@ -252,7 +252,7 @@ html {
     margin-top: 11.25rem;
     margin-right: 0;
     margin-left: 0;  /* Needed to override 777777 */
-    background-color: #DDDDDD; 
+    background-color: #DDDDDD;
     padding-bottom: 2rem;
   }
   #idMottoSection #mottoButton {
@@ -269,6 +269,12 @@ html {
 /**************************************/
 /***** START INFORMATION SECTION ******/
 /**************************************/
+/* idFeaturesSection   ORGANIZATION OF DIVS:
+  [--.halfScreenLeft--]   [--.halfScreenRight--]
+    <img only> 60%         <infoBox><..Left/..Right>
+    .halfScreenSubtitle    <infoBox><..Left/..Right>
+    <h2></h2>, <p></p>     <infoBox><..Left/..Right>
+    #idFeatureFootnote */
 #idFeaturesSection {
   width: 100%;
   display: inline-flex;
@@ -301,15 +307,24 @@ html {
   border-left: solid 1px #eeeeee;
   border-right: solid 1px #eeeeee;
   border-bottom: solid 1px #eeeeee;
+  padding-bottom: 1rem;
 }
-@media only screen and (max-width: 680px) {
+/* was: #imgInfoOrientation, #imgInfoOurCampus */
+.infoMobileImage {
+  width: 95%;
+  height: auto;
+  margin: 1rem 0;  /* about 16px */
+  text-align: center;
+  display: none; /* hide, hidden on right */
+}
+@media only screen and (max-width: 720px) {
   /* FOR SMALLER SCREENS (TABLETS)  */
   .infoBox:hover {
     /* default background-color: #eeeeee; */
     background-color: #cccccc; /* darker */
   };
   .halfScreenRight, .infoBox {
-    /* default is this at < 680px at the top :
+    /* default is this at < 720px at the top :
     background-color: #DDDDDD; */
     background-color: #eeeeee; /* lighter */
   };
@@ -348,6 +363,132 @@ html {
   padding: 0;
   font-size: 1rem;
 }
+
+@media only screen and (max-width: 450px) {
+  /* FOR TINY PHONE SCREENS,
+     MAKE ICONS WIDER IN INFO SECTION: */
+ .infoBox {  /* default padding = 0.5rem */
+   padding-bottom: 1rem;
+ }
+ .infoBox .infoBoxLeft {
+   /* hide left since new image is hidden on
+      the .infoBoxRight pane */
+   display: none;
+ }
+ .infoBox .infoBoxRight {
+   /* no border top/bottom, but right is IN */
+   margin: 0 2rem 0 1rem;
+   width: 100%;
+   /* this border for debug only:
+   border: solid 1px red;  */
+ }
+ /* was: #imgInfoOrientation, #imgInfoOurCampus */
+ .infoMobileImage {
+   /* this inherits width/height/margin from main */
+   display: block; /* show */
+ }
+
+}
 /**************************************/
 /****** END INFORMATION SECTION *******/
+/**************************************/
+
+
+/**************************************/
+/******* START LEARNING SECTION *******/
+/**************************************/
+/* idLearningSection   ORGANIZATION OF DIVS:
+         <h2>Start learning</h2>
+  [--------- .fullScreenTileRows ---------]
+  .learnBox       .learnBox      .learnBox
+  <..Top/Bottom>  <..Top/Bottom> <..Top/Bottom>
+
+  .learnBox       .learnBox      .learnBox
+  <..Top/Bottom>  <..Top/Bottom> <..Top/Bottom>
+
+  ..etc., where .learnBox is structed as:
+  =======================================
+     .learnBox
+       .learnBoxTop <img><h4>.. COURSES
+       .learnBoxBottom <p>..</p>
+*/
+#idLearningSection {
+  padding: 2rem 1rem; /* 16px on the side */
+  text-align: center;
+  color: #666666;
+  background-color: #dddddd;
+}
+#idLearningSection h1,h2,h3 {
+  color: #333333;
+  padding: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.fullScreenTileRows {
+  display: inline-flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.learnBox {
+  width: 30%;
+  min-width: 14rem;
+  min-height: 19rem;
+  text-align: left;
+  background-color: white;
+  margin: 1rem;
+}
+.learnBox h2,h3,h4 {
+  color: #333333;
+  font-size: 1.1rem;
+  /* 16px on top or left */
+  margin: 1rem 0.5rem 0.5rem 1rem;
+  padding: 0;
+}
+.learnBox p {
+  color: #333333;
+  font-size: 0.9rem;
+  /* 16px on left or bottom, the rest 8px */
+  margin: 0.5rem 0.5rem 1rem 1rem;
+  margin-top: 0.5rem;
+}
+.learnBoxTop {
+  max-height: 13.75rem;
+  vertical-align: bottom;
+}
+.learnBoxTop img {
+  width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 450px) {
+  /* FOR TINY PHONE SCREENS,
+     REMOVE IMAGES IN LEARN SECTION: */
+  #idLearningSection {
+    background-color: #ffffff; /* lighter */
+  }
+  .fullScreenTileRows {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  .learnBox {
+    background-color: #cccccc; /* darker */
+    width: 90%;
+    min-width: inherit;
+    min-height: inherit;
+    margin: 0.25rem;  /* go from 16px default */
+  }
+  .learnBox p, .learnBox img {
+    display: none; /* hide all minor text
+      and pictures for small screens */
+  }
+  .learnBox h2,h3,h4 {
+    /* 16px on all sides */
+    margin: 1rem;
+  }
+  #idLearningSection .titleDarker {
+    display: block;
+  }
+}
+/**************************************/
+/******** END LEARNING SECTION ********/
 /**************************************/
