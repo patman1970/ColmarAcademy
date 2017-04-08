@@ -2,22 +2,23 @@
 <html>
   <head>
     <title>Colmar Academy</title>
+    <link rel="icon" href="./colmarlogo.ico" type="image/x-icon">
     <link href="./resources/css/style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
 
-    <div id="idTitleBar">
+    <header id="idTitleBar">
       <div class="titleBarLeft">
         <!-- This reads from .DS_Store to render
              the logo image resource -->
         <img class="titleLogoImg"
              src="./resources/images/ic-logo.svg"
-             alt="Colmar Academny Logo" />
-        <h2 class="titleDarker">Colmar</h2>
-        <h2 class="titleLighter">Academy</h2>
+             alt="Colmar Academy" />
+        <h2 class="titleDarker"  role="presentation">Colmar</h2>
+        <h2 class="titleLighter" role="presentation">Academy</h2>
       </div><!-- end titleBarLeft -->
-      <div class="titleBarRight">
-        <nav>
+      <div class="titleBarRight" role="presentation">
+        <nav role="presentation">
           <button class="titleNavButton">
             On campus
           </button>
@@ -40,7 +41,7 @@
       <img id="idSignIn" class="mottoButtonImg"
            alt="Sign In Your Account"
            src="./resources/images/ic-login.svg" />
-    </div><!-- end idTitleBar section -->
+    </header><!-- end idTitleBar section -->
 
     <div id="idMottoSection">
       <div class="halfScreenLeft">
@@ -48,10 +49,11 @@
              alt="The Colmar Academny Motto" />
       </div>
       <div class="halfScreenRight">
-        <h2>Learn something new everyday</h2>
-        <h4>
-          Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit.
+        <h2>Learn something new every day</h2>
+        <h4 role="complementary">
+          With our wide range of classes on hundreds
+          of topics, you can learn something new almost
+          every day.
         </h4>
         <button id="mottoButton">Start here
         </button>
@@ -66,12 +68,11 @@
 
         <div class="halfScreenSubtitle">
           <h2>It doesn't hurt to keep practicing</h2>
-          <p>"Curabitur vitae libero in ipsum porttitor
-            consequat.  Aliquam et commodo lectus nec
-            consequat neque.  Sed non accumsan urna.
-            Phasellus sed consequat ex. Etiam eget magna
-            laoreet, efficitur dolor consequat, tristique
-            ligula."
+          <p>"I've been in the field for almost 20 years,
+            but frequently come back to Colmar Academy
+            to keep current on the most current technology,
+            or even to refresh my knowledge on important
+            topics like Business Analytics and Web Design."
           </p>
           <p id="idFeatureFootnote">
             Emanuel, Sr Strategist at Hiring.com
@@ -279,7 +280,8 @@
           </div>
           <div class="infoBoxRight">
             <h4>Fisma: Design</h4>
-            <p>
+            <p aria-label="An image is shown of a student
+             going over Fisma Design drawings.">
               Designer showcase of new
               prototype product.
             </p>
@@ -295,7 +297,8 @@
           </div>
           <div class="infoBoxRight">
             <h4>Now and then</h4>
-            <p>
+            <p aria-label="An image is shown of the New York skyline,
+               as we presented it through Fisma Design.">
               Research study about New York
             </p>
             <!-- button class="infoReadMore">Read more
@@ -307,7 +310,7 @@
     </div><!-- end idThesisSection -->
 
 
-    <div id="idFooterBar">
+    <footer id="idFooterBar">
       <div class="titleBarLeft">
         &copy; Colmar Academy. All rights reserved.
       </div><!-- end titleBarLeft -->
@@ -317,7 +320,7 @@
           <li><a href="#">Privacy</a></li>
         </ul>
       </div><!-- end titleBarRight -->
-    </div><!-- end idFooterBar section -->
+    </footer><!-- end idFooterBar section -->
 
   </body>
 </html>
